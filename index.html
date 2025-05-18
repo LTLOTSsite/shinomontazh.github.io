@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Профессиональный шиномонтаж в вашем городе. Качественные услуги по замене и ремонту шин">
+    <title>ProШины - профессиональный шиномонтаж</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551489186-cf8726f514f8?ixlib=rb-1.2.1');
+            background-size: cover;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .header {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .services {
+            padding: 5rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact {
+            padding: 5rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #FFD700;
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #ffc800;
+        }
+
+        .footer {
+            background: #000;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Оптимизация */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">PROШИНЫ</a>
+            <div class="nav-links">
+                <a href="#services">Услуги</a>
+                <a href="#about">О нас</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Профессиональный шиномонтаж</h1>
+            <p>Качественный сервис для вашего автомобиля</p>
+            <button>Записаться онлайн</button>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Сезонная замена шин</h3>
+                <p>Профессиональная замена и балансировка колес</p>
+            </div>
+            <div class="service-card">
+                <h3>Ремонт проколов</h3>
+                <p>Качественный ремонт любого типа проколов</p>
+            </div>
+            <div class="service-card">
+                <h3>Хранение шин</h3>
+                <p>Условия для правильного сезонного хранения</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Контакты</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Ваше имя" required>
+            <input type="tel" placeholder="Ваш телефон" required>
+            <textarea placeholder="Сообщение" rows="5" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>© 2023 PROШИНЫ. Все права защищены</p>
+    </footer>
+
+    <script>
+        // Ленивая загрузка
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = [].slice.call(document.querySelectorAll(".lazy-load"));
+            
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
